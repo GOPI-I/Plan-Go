@@ -1,0 +1,150 @@
+.listContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.listWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+}
+
+.listSearch {
+    flex: 1;
+    background-color: #343a40; /* Professional dark background */
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 10px;
+    height: max-content;
+    box-shadow: 0px 4px 8px rgba(201, 195, 195, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.listSearch:hover {
+    transform: scale(1.03); /* Subtle scaling effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lsTitle {
+    font-size: 20px;
+    color: #ffdd59; /* Professional golden shade */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.lsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.lsItem > label {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.lsItem > input {
+    height: 30px;
+    border: 1px solid #ffdd59;
+    padding: 5px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.lsItem > input:focus {
+    border-color: #ff9f43; /* Bright focus border */
+    box-shadow: 0px 0px 8px rgba(252, 251, 251, 0.5);
+    outline: none;
+}
+
+.lsItem > span {
+    height: 30px;
+    padding: 5px;
+    background-color: #3d75ad; /* Subtle dark background for span */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.lsItem > span:hover {
+    background-color: #6c757d; /* Slightly lighter hover effect */
+}
+
+.lsOptions {
+    padding: 10px;
+}
+
+.lsOptionItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #ffffff; /* Clean white text */
+    font-size: 12px;
+}
+
+.lsOptionInput {
+    width: 50px;
+    border: 1px solid #ffdd59;
+    border-radius: 5px;
+    padding: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.lsOptionInput:focus {
+    border-color: #ff9f43;
+    outline: none;
+}
+
+.listSearch > button {
+    padding: 10px;
+    background-color: #007bff; /* Modern blue button */
+    color: white;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.listSearch > button:hover {
+    background-color: #0056b3; /* Darker hover effect for button */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.listResult {
+    flex: 3;
+    background-color: #f8f9fa; /* Subtle light background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.listResult:hover {
+    transform: scale(1.02); /* Slight scaling effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.checkInSpan {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.checkInSpan:hover {
+    background-color: #f0f0f0; /* Slightly darker shade on hover */
+    color: #333; /* Darker black */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}

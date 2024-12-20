@@ -1,0 +1,67 @@
+/* Styling the action section */
+.actions {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+  /* Styling the action cards */
+  .action-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Subtle gradient */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .action-card:hover {
+    transform: scale(1.05); /* Animation on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Highlighted shadow */
+  }
+  
+  /* Styling the card title */
+  .action-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  /* Styling the card text */
+  .action-text {
+    color: #666666;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling the buttons */
+  .action-btn {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .action-btn:hover {
+    transform: translateY(-3px); /* Lift on hover */
+  }
+  
+  /* Button variants */
+  .action-btn.btn-success {
+    background-color: #28a745; /* Green button */
+    color: #ffffff;
+  }
+  
+  .action-btn.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .action-btn.btn-info {
+    background-color: #17a2b8; /* Blue button */
+    color: #ffffff;
+  }
+  
+  .action-btn.btn-info:hover {
+    background-color: #138496; /* Darker blue on hover */
+  }
+  
