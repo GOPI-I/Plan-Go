@@ -21,27 +21,44 @@ const AdvanceSearch = () => {
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
-    children: 0
+    children: 0,
   });
+
   const handleOption = (name, operation) => {
     setOptions((prev) => ({
       ...prev,
-      [name]: operation === "i" 
-        ? prev[name] + 1 
-        : Math.max(name === "adult" ? 1 : 0, prev[name] - 1),
+      [name]:
+        operation === "i"
+          ? prev[name] + 1
+          : Math.max(name === "adult" ? 1 : 0, prev[name] - 1),
     }));
   };
 
   const navigate = useNavigate();
 
   const handleSearch = () => {
+    const startDate = date[0].startDate;
+    const endDate = date[0].endDate;
+    const diffInTime = endDate.getTime() - startDate.getTime();
+    const diffInDays = diffInTime / (1000 * 3600 * 24); // Convert to days
+    
     if (destination) {
-      navigate("/itinerary", { state: { destination, date, options } });
+      if (diffInDays < 3) {
+        alert("Date range should be at least 3 days.");
+      } else {
+        navigate("/itinerary", {
+          state: {
+            destination,
+            date: [{ startDate: date[0].startDate, endDate: date[0].endDate }],
+            options, // Passing the options (adult and children values)
+          },
+        });
+      }
     } else {
       alert("Please select a destination.");
     }
   };
-
+  
   return (
     <section className="box-search-advance">
       <Container>
@@ -49,26 +66,45 @@ const AdvanceSearch = () => {
           <Col md={12}>
             <div className="box-search shadow-sm">
               <div className="item-search">
-              <CustDrop
-                label="Location"
-                onChange={(e) => setDestination(e.target.value)}
-                onSelect={(selectedOption) => setDestination(selectedOption)} // Update the destination state
-                options={[
-                  "USA, Turkish",
-                  "Tokyo, Japan",
-                  "Sydney, Australia",
-                  "Melbourne, Australia",
-                  "Paris, France",
-                ]}
-/>
-
-
+                <CustDrop
+                  label="Location"
+                  onChange={(e) => setDestination(e.target.value)}
+                  onSelect={(selectedOption) => setDestination(selectedOption)}
+                  options={[
+                    "USA, Turkish",
+                    "Tokyo, Japan",
+                    "Sydney, Australia",
+                    "Melbourne, Australia",
+                    "Paris, France",
+                    "Rome, Italy",
+                    "Bangkok, Thailand",
+                    "Dubai, UAE",
+                    "London, UK",
+                    "Cape Town, South Africa",
+                    "Rio de Janeiro, Brazil",
+                    "New Delhi, India",
+                    "Athens, Greece",
+                    "Beijing, China",
+                    "Kyoto, Japan",
+                    "San Francisco, USA",
+                    "Singapore",
+                    "Istanbul, Turkey",
+                    "Cairo, Egypt",
+                    "Santorini, Greece",
+                    "Maldives, Indian Ocean",
+                    "Bora Bora, French Polynesia",
+                    "Machu Picchu, Peru",
+                    "Grand Canyon, USA",
+                    "Great Barrier Reef, Australia",
+                    "Swiss Alps, Switzerland",
+                  ]}
+                />
               </div>
               <div className="item-search item-search-2">
-                <label>Start Date to End Date</label>
+                <label className="left-date">Start Date to End Date</label>
                 <span
                   onClick={() => setOpenDate(!openDate)}
-                  className="item-search-label"
+                  className="item-search-label left-date"
                 >
                   {`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
                     date[0].endDate,
@@ -85,7 +121,8 @@ const AdvanceSearch = () => {
                 )}
               </div>
               <div className="item-search bd-none">
-                <label>Guest</label><br></br>
+                <label>Guest</label>
+                <br />
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"

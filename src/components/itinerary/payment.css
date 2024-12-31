@@ -1,0 +1,56 @@
+/* payment.css */
+.payment-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .payment-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-button {
+    background-color: #28a745;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .payment-button:hover {
+    background-color: #218838;
+  }
+  
+  .payment-methods {
+    margin-top: 20px;
+  }
+  
+  .payment-logos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .payment-logo {
+    width: 60px;
+    height: auto;
+  }
+  
+  h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Modal styling */
+  .modal-content {
+    border-radius: 10px;
+  }
+  
+  .alert {
+    font-size: 16px;
+  }
+  

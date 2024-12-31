@@ -1,0 +1,121 @@
+/* Container for the entire component with glowing border */
+.coPassengerContainerUnique {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #ff4e50, #f9d423);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: glowingBorder 1.5s infinite ease-in-out;
+  }
+  
+  /* Keyframes for glowing effect */
+  @keyframes glowingBorder {
+    0% {
+      border-color: #ff4e50;
+    }
+    50% {
+      border-color: #f9d423;
+    }
+    100% {
+      border-color: #ff4e50;
+    }
+  }
+  
+  .coPassengerTitleUnique {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .inputFieldsUnique {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .inputFieldUnique {
+    margin: 10px;
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+  }
+  
+  .inputFieldUnique:focus {
+    border-color: #ff4e50;
+    outline: none;
+  }
+  
+  .addButtonUnique {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addButtonUnique:hover {
+    background-color: #45a049;
+  }
+  
+  .passengerListUnique {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .passengerItemUnique {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  .deleteButtonUnique {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .deleteButtonUnique:hover {
+    background-color: darkred;
+  }
+  
+  .nextPageButtonUnique {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nextPageButtonUnique:hover {
+    background-color: #0b7dda;
+  }
+  

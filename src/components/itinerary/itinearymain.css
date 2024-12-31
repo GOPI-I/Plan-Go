@@ -1,0 +1,180 @@
+itinearymain.css
+
+/* General Styles */
+
+
+.dashboard-main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dashboard-main-content:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Header */
+.dashboard-container {
+  margin-top: 30px;
+}
+
+/* Dropdown Section */
+.dashboard-lsItem {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-lsItem label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.destination-box {
+  padding: 10px;
+  background-color: #eef2f7;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Start & End Date Section */
+label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+span {
+  font-size: 16px;
+  color: #007bff;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.dashboard-warning {
+  margin-top: 10px;
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Date Picker */
+.mt-3 {
+  margin-top: 20px;
+}
+
+.dashboard-total-days {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dashboard-total-days span {
+  font-size: 20px;
+  color: #007bff;
+}
+
+/* Guest Details Section */
+.dashboard-guest-details {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dashboard-guest-details span {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Button Section */
+.dashboard-next-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-next-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.dashboard-next-button:focus {
+  outline: none;
+}
+
+.dashboard-next-button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Sidebar styles */
+.dashboard-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-sidebar .sidebar-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f8f9fa;
+  margin-bottom: 30px;
+}
+
+.dashboard-sidebar .nav-item {
+  margin: 15px 0;
+  color: #ced4da;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.dashboard-sidebar .nav-item:hover {
+  color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dashboard-main-content {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.dashboard-container {
+  animation: fadeIn 0.7s ease-in;
+}

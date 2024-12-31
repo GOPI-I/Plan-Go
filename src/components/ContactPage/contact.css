@@ -1,0 +1,48 @@
+.medium-image {
+    height: auto; /* Ensures aspect ratio is maintained */
+    max-height: 600px; /* Medium size, adjust as needed */
+    width: 100%; /* Ensure responsiveness */
+    object-fit: cover; /* Crop the image if necessary */
+  }
+  .custom-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .form-title {
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 20px;
+    background-color: #e8e6e6;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-button {
+    background-color: #da4ea2;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .form-success {
+    margin-top: 10px;
+    color: green;
+    font-size: 0.9rem;
+  }
+  

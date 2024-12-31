@@ -121,4 +121,9 @@ header .navbar .offcanvas-body .dropdown-menu a:hover {
 }
 .logo span {
   color: #aaff00;
+  
+}
+.user-name{
+  padding: 2px;
+  margin-right: 4px;
 }

@@ -180,6 +180,7 @@ const FlightList = () => {
           </div>
         </div>
       </div>
+      <Button>next </Button>
     </>
   );
 };

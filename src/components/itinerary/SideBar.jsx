@@ -9,12 +9,9 @@ const SideBar = () => {
     <div className="sidebar d-flex flex-column">
       <div className="logo mb-4">plan<span>go</span></div>
       <Nav className="flex-column">
-        <Nav.Link href="#" className="nav-item">Dashboard</Nav.Link>
-        <Nav.Link href="#" className="nav-item">My Tickets</Nav.Link>
-        <Nav.Link href="#" className="nav-item">Favourite</Nav.Link>
-        <Nav.Link href="#" className="nav-item">Share & Collaborate</Nav.Link>
-        <Nav.Link href="#" className="nav-item">Transaction</Nav.Link>
-        <Nav.Link href="#" className="nav-item">Settings</Nav.Link>
+        <NavLink to="/itinearydashboard" className="nav-item">Dashboard</NavLink>
+        <NavLink to="/airporttaxi" className="nav-item">AirPort Taxi</NavLink>
+        <NavLink to="/share" className="nav-item">Share & Collaborate</NavLink>
       </Nav>
       <NavLink to="/membership" >
         <img

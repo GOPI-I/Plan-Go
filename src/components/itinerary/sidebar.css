@@ -18,6 +18,11 @@
     color: white;
     margin: 10px 0;
     font-size: 16px;
+    text-decoration: none;
+
+  }
+  .nav-item:hover{
+    color: antiquewhite;
   }
   .discount {
     background: #eefbe7;

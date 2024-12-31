@@ -1,0 +1,89 @@
+/* Scoped About Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .about-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-card-header {
+    background-color: #e3f2fd;
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .about-card-footer {
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .about-button {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-button:hover {
+    background-color: #1558b3;
+  }
+  
+  .about-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-row {
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .about-card {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .about-text-lg {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .about-text-gray-600 {
+    color: #888;
+  }
+  

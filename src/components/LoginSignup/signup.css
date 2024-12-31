@@ -3,33 +3,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: url("../../assets/images/slider/bg.jpeg");
+  min-height: 100vh;
+  background: url("../../assets/images/slider/bg.jpeg") no-repeat center center/cover;
+  margin: 0;
 }
 
 /* Container */
 .signup-container-unique {
   display: flex;
-  background: #fff;
+  flex-direction: column;
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 85%;
+  width: 90%;
   max-width: 1200px;
+  margin: 20px;
+}
+
+@media (min-width: 768px) {
+  .signup-container-unique {
+    flex-direction: row;
+  }
 }
 
 /* Left Image Section */
 .signup-left-unique {
   flex: 1;
-  background-image: url("../../assets/images/slider/signup.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("../../assets/images/slider/signup.jpg") no-repeat center center/cover;
+  min-height: 250px;
+}
+
+@media (min-width: 768px) {
+  .signup-left-unique {
+    min-height: auto;
+  }
 }
 
 /* Right Form Section */
 .signup-right-unique {
   flex: 1;
-  padding: 50px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,31 +57,32 @@
 }
 
 .signup-form-title-unique {
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 25px;
-  color: #333;
+  margin-bottom: 20px;
+  color: #333333;
   text-align: center;
 }
 
 /* Form Styles */
 .signup-form-unique .signup-form-group-unique {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .signup-label-unique {
   display: block;
   font-size: 14px;
-  color: #555;
+  color: #555555;
   margin-bottom: 8px;
 }
 
 .signup-input-unique {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  border: 1px solid #dddddd;
   border-radius: 8px;
   font-size: 14px;
+  transition: all 0.3s ease;
 }
 
 .signup-input-unique:focus {
@@ -79,26 +94,29 @@
 /* Profile Picture */
 .profile-picture-group-unique {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .signup-profile-picture-unique {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-color: #eee;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #aaa;
+  color: #aaaaaa;
   cursor: pointer;
   overflow: hidden;
-  border: 2px dashed #ccc;
-  margin: 0 auto 20px;
+  border: 2px dashed #cccccc;
+  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
 .signup-profile-picture-unique:hover {
   border-color: #6a11cb;
+  background-color: #ffffff;
 }
 
 /* Submit Button */
@@ -109,10 +127,11 @@
   padding: 12px;
   border-radius: 8px;
   font-size: 16px;
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .signup-submit-button-unique:hover {
@@ -123,7 +142,7 @@
 .signup-form-footer-unique {
   text-align: center;
   font-size: 14px;
-  color: #555;
+  color: #555555;
   margin-top: 20px;
 }
 
@@ -134,4 +153,20 @@
 
 .signup-link-unique:hover {
   text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .signup-right-unique {
+    padding: 30px;
+  }
+
+  .signup-form-title-unique {
+    font-size: 1.6rem;
+  }
+
+  .signup-submit-button-unique {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

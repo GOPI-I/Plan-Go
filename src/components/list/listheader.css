@@ -209,3 +209,6 @@
         transform: translateY(0);
     }
 }
+NavLink{
+    text-decoration: none;
+}

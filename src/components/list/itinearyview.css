@@ -1,0 +1,87 @@
+/* ItineraryView component styles */
+.itineraryViewContainerUnique {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .itineraryTitleUnique {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Styles */
+  .itinerarySectionUnique {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subTitleUnique {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 10px;
+  }
+  
+  .visitItemUnique, .copassengerItemUnique, .draggedFlightItemUnique, .hotelDetailsUnique {
+    margin: 10px 0;
+  }
+  
+  .visitItemUnique p, .copassengerItemUnique span, .draggedFlightItemUnique p, .hotelDetailsUnique p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  /* Specific styles for dragged flight details */
+  .draggedFlightItemUnique {
+    background-color: #e8f4f8;
+    border-left: 5px solid #0056b3;
+    padding-left: 15px;
+  }
+  
+  .draggedFlightItemUnique a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .draggedFlightItemUnique a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Hotel details styles */
+  .hotelDetailsUnique {
+    background-color: #e9f7e5;
+    border-left: 5px solid #28a745;
+    padding-left: 15px;
+  }
+  
+  /* Visit history item styles */
+  .visitItemUnique {
+    background-color: #f4f9fe;
+    border-left: 5px solid #007bff;
+    padding-left: 15px;
+  }
+  
+  /* Co-passenger details styles */
+  .copassengerItemUnique {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding-left: 15px;
+  }
+  
+  /* Fallback styles in case of no data */
+  p {
+    font-style: italic;
+    color: #777;
+  }
+  

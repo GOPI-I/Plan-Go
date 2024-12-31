@@ -9,7 +9,10 @@
   margin-bottom: -50px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content:space-around
+}
+.left-date{
+  margin: 5px 25px 20px 5px;
 }
 
 .box-search-advance .box-search .item-search {

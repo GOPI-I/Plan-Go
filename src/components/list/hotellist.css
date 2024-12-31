@@ -1,150 +1,220 @@
-.listContainer {
+.hotelListContainer {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.listWrapper {
-    width: 100%;
-    max-width: 1024px;
-    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
-}
-
-.listSearch {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .listSearch {
     flex: 1;
-    background-color: #343a40; /* Professional dark background */
-    padding: 10px;
+    background-color: #febb02;
+    padding: 20px;
     border-radius: 10px;
     position: sticky;
-    top: 10px;
-    height: max-content;
-    box-shadow: 0px 4px 8px rgba(201, 195, 195, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.listSearch:hover {
-    transform: scale(1.03); /* Subtle scaling effect */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.lsTitle {
-    font-size: 20px;
-    color: #ffdd59; /* Professional golden shade */
-    margin-bottom: 10px;
+    top: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .lsTitle {
+    font-size: 22px;
     font-weight: bold;
-}
-
-.lsItem {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .lsItem {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
-}
-
-.lsItem > label {
-    font-size: 12px;
-    color: #ffffff;
-}
-
-.lsItem > input {
-    height: 30px;
-    border: 1px solid #ffdd59;
-    padding: 5px;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .lsItem > label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .lsItem > input, .lsItem > span {
+    height: 40px;
+    padding: 8px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.lsItem > input:focus {
-    border-color: #ff9f43; /* Bright focus border */
-    box-shadow: 0px 0px 8px rgba(252, 251, 251, 0.5);
+    font-size: 14px;
+    background-color: #fff;
     outline: none;
-}
-
-.lsItem > span {
-    height: 30px;
-    padding: 5px;
-    background-color: #3d75ad; /* Subtle dark background for span */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.lsItem > span:hover {
-    background-color: #6c757d; /* Slightly lighter hover effect */
-}
-
-.lsOptions {
+    transition: border-color 0.3s ease;
+  }
+  
+  .lsItem > input:focus, .lsItem > span:hover {
+    border-color: #0071c2;
+  }
+  
+  .lsOptions {
     padding: 10px;
-}
-
-.lsOptionItem {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lsOptionItem {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-    color: #ffffff; /* Clean white text */
-    font-size: 12px;
-}
-
-.lsOptionInput {
-    width: 50px;
-    border: 1px solid #ffdd59;
-    border-radius: 5px;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .lsOptionInput {
+    width: 60px;
+    height: 30px;
     padding: 5px;
-    transition: border-color 0.3s ease-in-out;
-}
-
-.lsOptionInput:focus {
-    border-color: #ff9f43;
-    outline: none;
-}
-
-.listSearch > button {
-    padding: 10px;
-    background-color: #007bff; /* Modern blue button */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .listSearch > button {
+    padding: 12px;
+    background-color: #0071c2;
     color: white;
     border: none;
     width: 100%;
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.listSearch > button:hover {
-    background-color: #0056b3; /* Darker hover effect for button */
-    transform: translateY(-3px); /* Slight lift effect */
-}
-
-.listResult {
+    transition: background-color 0.3s ease;
+  }
+  
+  .listSearch > button:hover {
+    background-color: #005bb5;
+  }
+  
+  .hotelList {
     flex: 3;
-    background-color: #f8f9fa; /* Subtle light background */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .searchItem {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #fff;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: grab;
+  }
+  
+  .searchItem:active {
+    cursor: grabbing;
+  }
+  
+  .searchItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .siImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .siDesc {
+    padding: 15px;
+  }
+  
+  .siTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .siDistance, .siPrice {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .expenseTracker {
+    flex: 1;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.listResult:hover {
-    transform: scale(1.02); /* Slight scaling effect */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-.checkInSpan {
-    background-color: white; /* White background */
-    color: black; /* Black text */
-    padding: 5px 10px;
-    border-radius: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .expenseTracker:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .expenseTracker h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .expenseTracker p {
+    font-size: 16px;
     font-weight: 500;
+    color: #333;
+  }
+  .hotelTracker {
+    border: 1px dashed #0071c2;
+    padding: 20px;
+    position: sticky;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hotelTracker h3 {
+    font-size: 1.5rem;
+    color: #0071c2;
+    margin-bottom: 20px;
+  }
+  
+  .hotelCard {
+    padding: 10px;
+    border: 1px solid #0071c2;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  .hotelCard p {
+    margin: 5px 0;
+  }
+  
+  .addButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    border: none;
     cursor: pointer;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.checkInSpan:hover {
-    background-color: #f0f0f0; /* Slightly darker shade on hover */
-    color: #333; /* Darker black */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-}
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .addButton:hover {
+    background-color: #005f8d;
+  }
+  
