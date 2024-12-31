@@ -1,3 +1,4 @@
+/* Sticky Menu */
 .is-sticky {
   position: fixed;
   top: 0;
@@ -57,7 +58,6 @@ header .navbar .offcanvas-body a {
 header .navbar .offcanvas-body a:hover,
 header .navbar .nav-link:hover {
   color: gold !important;
-
   border-radius: 5px;
 }
 
@@ -114,11 +114,22 @@ header .navbar .offcanvas-body .dropdown-menu a:hover {
     padding: 12px 10px;
     color: var(--black);
   }
+
+  .primaryBtn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .primaryBtn.d-none.d-sm-inline-block {
+    display: none;
+  }
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
+
 .logo span {
   color: #aaff00;
 }
@@ -126,4 +137,12 @@ header .navbar .offcanvas-body .dropdown-menu a:hover {
 .user-name {
   padding: 2px;
   margin-right: 4px;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-black {
+  color: black !important;
 }

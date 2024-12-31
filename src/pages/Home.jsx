@@ -71,8 +71,6 @@ const Home = () => {
       <AdvanceSearch />
       <WhyUs />
 
-      {/* tour seciton start */}
-
       <section className="tours_section slick_slider">
         <Container>
           <Row>
@@ -94,8 +92,6 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
-      {/* tour seciton start */}
 
       <section className="popular py-5">
         <Container>

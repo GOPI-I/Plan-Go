@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
-import './why.css';
-import FlightDesign from './FlightDesign';
-import HotelDesign from './HotelDesign';
-import Expense from './Expense';
-import Document from './Document';
+import React, { useState } from "react";
+import "./why.css";
+import FlightDesign from "./FlightDesign";
+import HotelDesign from "./HotelDesign";
+import Expense from "./Expense";
+import Document from "./Document";
 
-const data = [
-  "Flight",
-  "Hotel",
-  "ExpenseTracker",
-  "Document",
-];
+const data = ["Flight", "Hotel", "ExpenseTracker", "Document"];
 
 const WhyUs = () => {
   const [work, setWork] = useState("Flight");
 
   return (
     <div className="works-section">
-      <div className="works-heading">
-        
-      </div>
+      <div className="works-heading"></div>
       <div className="works-container">
         <div className="works-left">
           <ul className="works-list">
@@ -38,8 +31,8 @@ const WhyUs = () => {
         <div className="works-right">
           {work === "Flight" && <FlightDesign />}
           {work === "Hotel" && <HotelDesign />}
-          {work === "ExpenseTracker" && <Expense/>}
-          {work === "Document" && <Document/>}
+          {work === "ExpenseTracker" && <Expense />}
+          {work === "Document" && <Document />}
         </div>
       </div>
     </div>

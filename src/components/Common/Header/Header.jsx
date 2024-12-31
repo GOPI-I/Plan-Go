@@ -9,6 +9,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const { name } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const [backgroundWhite, setBackgroundWhite] = useState(false);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -24,9 +25,7 @@ const Header = () => {
   const isSticky = () => {
     const header = document.querySelector(".header-section");
     const scrollTop = window.scrollY;
-    scrollTop >= 120
-      ? header.classList.add("is-sticky")
-      : header.classList.remove("is-sticky");
+    setBackgroundWhite(scrollTop >= 120);
   };
 
   const handleLogout = () => {
@@ -35,12 +34,16 @@ const Header = () => {
   };
 
   return (
-    <header className="header-section">
+    <header className={`header-section ${backgroundWhite ? "is-sticky" : ""}`}>
       <Container>
         <Navbar expand="lg" className="p-0">
           <Navbar.Brand>
             <NavLink to="/">
-              <div className="logo mb-4">
+              <div
+                className={`logo mb-4 ${
+                  backgroundWhite ? "text-black" : "text-white"
+                }`}
+              >
                 plan<span>go</span>
               </div>
             </NavLink>
@@ -53,7 +56,13 @@ const Header = () => {
             show={open}
           >
             <Offcanvas.Header>
-              <h1 className="logo">Plan Go</h1>
+              <h1
+                className={`logo ${
+                  backgroundWhite ? "text-black" : "text-white"
+                }`}
+              >
+                Plan Go
+              </h1>
               <span className="navbar-toggler ms-auto" onClick={toggleMenu}>
                 <i className="bi bi-x-lg"></i>
               </span>
@@ -67,9 +76,6 @@ const Header = () => {
                 <NavLink className="nav-link" to="/about">
                   About Us
                 </NavLink>
-                {/* <NavLink className="nav-link" to="/">
-                  Holiday Packages
-                </NavLink> */}
                 <NavLink className="nav-link" to="/contact">
                   Contact Us
                 </NavLink>
@@ -80,7 +86,11 @@ const Header = () => {
           <div className="ms-md-4 ms-2">
             {name ? (
               <>
-                <span className="user-name" style={{ color: "white" }}>
+                <span
+                  className={`user-name ${
+                    backgroundWhite ? "text-black" : "text-white"
+                  }`}
+                >
                   Welcome, {name}
                 </span>
                 <button className="primaryBtn" onClick={handleLogout}>
