@@ -1,18 +1,18 @@
-import React from 'react'
-import Banner from '../components/Banner/Banner'
-import AdvanceSearch from '../components/AdvanceSearch/AdvanceSearch'
-import { Container, Row, Col,  } from "react-bootstrap";
-import WhyUs from '../components/3DWork/WhyUs';
+import React from "react";
+import Banner from "../components/Banner/Banner";
+import AdvanceSearch from "../components/AdvanceSearch/AdvanceSearch";
+import { Container, Row, Col } from "react-bootstrap";
+import WhyUs from "../components/3DWork/WhyUs";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import "./home.css";
-import Cards from '../components/Cards/Cards';
-import { destinationsData, popularsData } from "../utils/data"
-import PopularCard from '../components/Cards/PopularCard';
-import Header from '../components/Common/Header/Header';
-import Footer from '../components/Common/Footer/Footer';
+import Cards from "../components/Cards/Cards";
+import { destinationsData, popularsData } from "../utils/data";
+import PopularCard from "../components/Cards/PopularCard";
+import Header from "../components/Common/Header/Header";
+import Footer from "../components/Common/Footer/Footer";
 
 const Home = () => {
   var settings = {
@@ -64,17 +64,16 @@ const Home = () => {
     ],
   };
 
-
   return (
     <>
-    <Header/>
-    <Banner/>
-    <AdvanceSearch/>
-    <WhyUs/>
+      <Header />
+      <Banner />
+      <AdvanceSearch />
+      <WhyUs />
 
-    {/* tour seciton start */}
+      {/* tour seciton start */}
 
-    <section className="tours_section slick_slider">
+      <section className="tours_section slick_slider">
         <Container>
           <Row>
             <Col md="12">
@@ -88,9 +87,7 @@ const Home = () => {
             <Col md="12">
               <Slider {...settings}>
                 {destinationsData.map((destination, inx) => {
-                  return (
-                    <Cards destination={destination} key={inx} />
-                  );
+                  return <Cards destination={destination} key={inx} />;
                 })}
               </Slider>
             </Col>
@@ -101,46 +98,44 @@ const Home = () => {
       {/* tour seciton start */}
 
       <section className="popular py-5">
-      <Container>
-        <Row>
-          <Col md="12">
-            <div className="main_heading">
-              <h1> Popular Activities </h1>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-        {popularsData.map((val, inx)=>{
-          return(
-          <Col  md={3} sm={6} xs={12} className="mb-5" key={inx}>
-            <PopularCard val={val} />
-          </Col>
-        )
-        })}
-        </Row>
-      </Container>
-    </section>
+        <Container>
+          <Row>
+            <Col md="12">
+              <div className="main_heading">
+                <h1> Popular Activities </h1>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            {popularsData.map((val, inx) => {
+              return (
+                <Col md={3} sm={6} xs={12} className="mb-5" key={inx}>
+                  <PopularCard val={val} />
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </section>
 
       <section className="call_us">
         <Container>
           <Row className="align-items-center">
             <Col md="8">
-              <h5 className="title">CALL TO ACTION</h5>
+              <h5 className="title" style={{ color: "white" }}>
+                CALL TO ACTION
+              </h5>
+
               <h2 className="heading">
                 READY FOR UNFORGATABLE TRAVEL. REMEMBER US!
               </h2>
               <p className="text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,{" "}
+                Your ready to go Trips can be also planned with the help of
+                PLANGO,{" "}
               </p>
             </Col>
             <Col md="4" className="text-center mt-3 mt-md-0">
-              <a
-                href="tel:"
-                className="secondary_btn bounce"
-                rel="no"
-              >
+              <a href="tel:" className="secondary_btn bounce" rel="no">
                 {" "}
                 Contact Us !
               </a>
@@ -149,12 +144,9 @@ const Home = () => {
         </Container>
         <div className="overlay"></div>
       </section>
-      <Footer/>
+      <Footer />
     </>
-    
-    
-    
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

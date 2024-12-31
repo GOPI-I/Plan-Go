@@ -7,7 +7,7 @@ import "./header.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const { name } = useSelector((state) => state.user); // Extract user details from Redux state
+  const { name } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const toggleMenu = () => {
@@ -24,7 +24,9 @@ const Header = () => {
   const isSticky = () => {
     const header = document.querySelector(".header-section");
     const scrollTop = window.scrollY;
-    scrollTop >= 120 ? header.classList.add("is-sticky") : header.classList.remove("is-sticky");
+    scrollTop >= 120
+      ? header.classList.add("is-sticky")
+      : header.classList.remove("is-sticky");
   };
 
   const handleLogout = () => {
@@ -65,9 +67,9 @@ const Header = () => {
                 <NavLink className="nav-link" to="/about">
                   About Us
                 </NavLink>
-                <NavLink className="nav-link" to="/">
+                {/* <NavLink className="nav-link" to="/">
                   Holiday Packages
-                </NavLink>
+                </NavLink> */}
                 <NavLink className="nav-link" to="/contact">
                   Contact Us
                 </NavLink>
@@ -76,25 +78,36 @@ const Header = () => {
           </Navbar.Offcanvas>
 
           <div className="ms-md-4 ms-2">
-            {name ? ( // Check if user is logged in
+            {name ? (
               <>
-                <span className="user-name">Welcome, {name}</span>
+                <span className="user-name" style={{ color: "white" }}>
+                  Welcome, {name}
+                </span>
                 <button className="primaryBtn" onClick={handleLogout}>
                   Logout
                 </button>
               </>
             ) : (
               <>
-                <NavLink to="/login" className="primaryBtn d-none d-sm-inline-block">
+                <NavLink
+                  to="/login"
+                  className="primaryBtn d-none d-sm-inline-block"
+                >
                   Login
                 </NavLink>
-                <NavLink to="/register" className="primaryBtn d-none d-sm-inline-block">
+                <NavLink
+                  to="/register"
+                  className="primaryBtn d-none d-sm-inline-block"
+                >
                   Register
                 </NavLink>
               </>
             )}
             <li className="d-inline-block d-lg-none ms-3 toggle_btn">
-              <i className={open ? "bi bi-x-lg" : "bi bi-list"} onClick={toggleMenu}></i>
+              <i
+                className={open ? "bi bi-x-lg" : "bi bi-list"}
+                onClick={toggleMenu}
+              ></i>
             </li>
           </div>
         </Navbar>

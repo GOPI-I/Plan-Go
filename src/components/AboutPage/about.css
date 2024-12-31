@@ -1,89 +1,172 @@
-/* Scoped About Styles */
 .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-card-header {
+  background-color: #e3f2fd;
+  border-radius: 10px 10px 0 0;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.about-card-footer {
+  background-color: #f8f9fa;
+  border-radius: 0 0 10px 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about-button {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #1558b3;
+}
+
+.about-profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.about-text-gray-600 {
+  color: #888;
+  text-align: center;
+}
+
+.about-row {
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-card {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .about-card {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .about-card-header {
-    background-color: #e3f2fd;
-    border-radius: 10px 10px 0 0;
-    padding: 1rem;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .about-card-footer {
-    background-color: #f8f9fa;
-    border-radius: 0 0 10px 10px;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .about-button {
-    background-color: #1a73e8;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .about-button:hover {
-    background-color: #1558b3;
-  }
-  
+}
+
+.about-text-lg {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.about-text-gray-600 {
+  color: #888;
+}
+
+.about-profile {
+  width: 120px;
+}
+
+@media (max-width: 768px) {
   .about-profile {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
-  .about-row {
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+}
+
+.about-container {
+  margin-top: 50px;
+}
+
+.about-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+}
+
+.about-card-header {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.about-button {
+  background-color: #042c99;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.about-button:hover {
+  background-color: #0347b7;
+}
+.dance {
+  animation: danceAnimation 1s infinite alternate;
+}
+
+@keyframes danceAnimation {
+  0% {
+    transform: translateY(0);
   }
-  
-  .about-card {
-    animation: fadeInUp 1s ease-in-out;
+  25% {
+    transform: translateY(-10px);
   }
-  
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  50% {
+    transform: translateY(0);
   }
-  
-  .about-text-lg {
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 0.5rem;
+  75% {
+    transform: translateY(10px);
   }
-  
-  .about-text-gray-600 {
-    color: #888;
+  100% {
+    transform: translateY(0);
   }
-  
+}
+
+.fun-fact {
+  margin-top: 15px;
+  font-size: 16px;
+  font-style: italic;
+  color: #008080;
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

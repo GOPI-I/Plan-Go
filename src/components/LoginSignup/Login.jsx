@@ -22,15 +22,17 @@ const Login = () => {
     setSuccessMessage("");
 
     try {
-      const response = await axios.post("https://plangobackend.onrender.com/api/auth/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://plangobackend.onrender.com/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       const user = response.data.user;
       const token = response.data.token;
 
-      // Save user data to Redux and store the token in localStorage
       dispatch(
         setUser({
           userId: user.id,
@@ -45,11 +47,11 @@ const Login = () => {
       setSuccessMessage(response.data.msg);
 
       setTimeout(() => {
-        navigate("/"); // Redirect to the homepage after successful login
+        navigate("/");
       }, 1000);
     } catch (error) {
       if (error.response) {
-        setErrorMessage(error.response.data.msg); // Display error message from backend
+        setErrorMessage(error.response.data.msg);
       } else {
         setErrorMessage("Something went wrong. Please try again.");
       }
@@ -74,6 +76,10 @@ const Login = () => {
           </Canvas>
         </div>
         <div className="login-right">
+          <div className="logo mb-3" onClick={() => navigate("/")}>
+            Plan<span>go</span>
+          </div>
+
           <div className="login-form-container">
             <h2 className="login-form-title">Login</h2>
             <form className="login-form" onSubmit={handleLogin}>
@@ -108,7 +114,8 @@ const Login = () => {
               </button>
             </form>
             <p className="login-form-footer">
-              Don't have an account? <NavLink to="/register">Register Here</NavLink>
+              Don't have an account?{" "}
+              <NavLink to="/register">Register Here</NavLink>
             </p>
           </div>
         </div>

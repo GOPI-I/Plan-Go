@@ -1,4 +1,3 @@
-/* Sticky Menu */
 .is-sticky {
   position: fixed;
   top: 0;
@@ -74,11 +73,12 @@ header .navbar .offcanvas-body .dropdown-menu a:hover {
 }
 
 .primaryBtn {
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .primaryBtn:last-child {
-  margin-right: 0; /* No extra margin on the last button */
+  margin-right: 0;
 }
 
 @media only screen and (max-width: 991px) {
@@ -121,9 +121,9 @@ header .navbar .offcanvas-body .dropdown-menu a:hover {
 }
 .logo span {
   color: #aaff00;
-  
 }
-.user-name{
+
+.user-name {
   padding: 2px;
   margin-right: 4px;
 }

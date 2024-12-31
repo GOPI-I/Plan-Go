@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("../../assets/images/slider/bg.jpeg") no-repeat center center/cover;
+  background: url("../../assets/images/slider/bg.jpeg") no-repeat center
+    center/cover;
   margin: 0;
 }
 
@@ -30,13 +31,14 @@
 /* Left Image Section */
 .signup-left-unique {
   flex: 1;
-  background: url("../../assets/images/slider/signup.jpg") no-repeat center center/cover;
+  background: url("../../assets/images/slider/signup.jpg") no-repeat center
+    center/cover;
   min-height: 250px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .signup-left-unique {
-    min-height: auto;
+    display: none;
   }
 }
 
@@ -168,5 +170,22 @@
   .signup-submit-button-unique {
     font-size: 14px;
     padding: 10px;
+  }
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logo span {
+  font-size: 28px;
+  color: #aaff00;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 18px;
   }
 }

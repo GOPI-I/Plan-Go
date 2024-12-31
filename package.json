@@ -28,6 +28,7 @@
     "react-scripts": "^5.0.1",
     "react-share": "^5.1.1",
     "react-slick": "^0.30.2",
+    "react-toastify": "^11.0.2",
     "recharts": "^2.15.0",
     "serve": "^14.2.4",
     "slick-carousel": "^1.8.1",
@@ -58,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
