@@ -4,14 +4,17 @@
   background-color: var(--white);
   padding: 20px;
   position: relative;
-  top:-90px;
+  top: -90px;
   z-index: 12;
   margin-bottom: -50px;
   display: flex;
   align-items: flex-end;
-  justify-content:space-around
+  justify-content: space-around;
+  flex-wrap: wrap;
+  transition: all 0.3s ease-in-out;
 }
-.left-date{
+
+.left-date {
   margin: 5px 25px 20px 5px;
 }
 
@@ -19,9 +22,11 @@
   width: 20%;
   position: relative;
   padding: 0px 12px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
 }
 
-.box-search-advance .box-search .item-search::before{
+.box-search-advance .box-search .item-search::before {
   content: "";
   position: absolute;
   top: 1px;
@@ -31,134 +36,43 @@
   background-color: #e4e6e8;
 }
 
-.box-search-advance .box-search .item-search-2{
+.box-search-advance .box-search .item-search:last-child::before {
+  display: none;
+}
+
+.box-search-advance .box-search .item-search-2 {
   display: inline-block;
-
-}
-
-.box-search-advance .box-search .item-search-2 
-.react-datepicker__input-container{
-  font-family: bootstrap-icons !important;
-  font-style: normal;
-  font-weight: 400 !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-}
-
-.box-search-advance .box-search .item-search-2 .react-datepicker-wrapper{
-  display: block;
-}
-
-.box-search-advance .box-search .item-search-2 
-.react-datepicker__input-container::before{
-  content: "\f214";
-  position: absolute;
-  left: 0;
-  bottom: 8px;
-  font-size: var(--bodyText);
-}
-
-
-.box-search-advance .box-search .item-search-2 
-.react-datepicker__input-container::after{
-  content: "\f282";
-  position: absolute;
-  right: 20px;
-  bottom: 8px;
-  font-size: var(--bodyText);
-}
-
-.box-search-advance .box-search .item-search-2 
-.react-datepicker-wrapper input{
-  border: none;
-  padding: 5px 40px 5px 5px;
-  padding-left: 22px !important;
-  line-height: 1.5;
-  width: 100%;
-  font-size: var(--bodyText);
-  font-weight: bold;
-  color:var(--textClr);
-  font-family: "Poppins", sans-serif;
-}
-
-.box-search-advance .box-search .item-search-2 
-.react-datepicker-wrapper input:focus{
-  border: none;
-  outline: none;
+  text-align: left;
 }
 
 .box-search-advance .box-search .item-search .item-search-label {
   font-size: var(--bodyText);
   line-height: 22px;
-  color:var(--textClr);
+  color: var(--textClr);
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
-}
-
-.box-search-advance .box-search .bd-none::before{
-  display: none;
+  text-align: left;
+  letter-spacing: 0.5px;
 }
 
 .box-search-advance .box-search .item-search .primaryBtn {
-  padding: 15px 32px !important;
-  font-size: 16px;
-  line-height: 26px !important;
+  padding: 10px 20px !important;
+  font-size: 14px;
+  line-height: 20px !important;
   align-items: center;
   width: fit-content;
   display: flex;
-  border:none;
+  border: none;
   font-weight: bold;
+  text-align: left;
+  transition: background-color 0.3s ease-in-out;
 }
-.box-search-advance .box-search .item-search .primaryBtn:hover{
+
+.box-search-advance .box-search .item-search .primaryBtn:hover {
   background-color: var(--primaryClr);
 }
 
-@media (max-width : 1199px){
-  .box-search-advance .box-search {
-      flex-wrap: wrap;
-  }
-  .box-search-advance .box-search .item-search:last-child{
-      width: 100%;
-      justify-content: center !important;
-      padding: 20px;
-      margin-left: auto;
-  }
-
-  .box-search-advance .box-search .item-search:last-child .primaryBtn{
-      width: 100%;
-      justify-content: center !important;
-  }
-
-  .box-search-advance .box-search .item-search{
-      width: 25%;
-  }
-}
-
-
-@media (max-width : 991px){
-  .box-search-advance .box-search .item-search{
-      width: 50%;
-      position: relative;
-      padding: 0px 27px;
-      margin-bottom: 15px;
-  }
-  .box-search-advance .box-search .item-search:nth-child(2)::before{
-      display: none;
-  }
-}
-
-@media (max-width : 575px){
-  .box-search-advance .box-search .item-search{
-      width: 100%;
-      border-bottom: 1px solid var(--bs-border-color);
-      padding: 10px;
-  }
-  .box-search-advance .box-search .item-search::before{
-      display: none;
-  }
-}
 .options {
   z-index: 2;
   position: absolute;
@@ -170,51 +84,86 @@
   padding: 10px;
   width: 100%;
 }
+
 .optionItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
+
 .optionCounterButton {
   background-color: var(--primaryClr);
   color: white;
   border: none;
+  margin-left: 10px;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
 }
+
 .optionCounterButton:disabled {
   background-color: lightgray;
   cursor: not-allowed;
 }
-.item-search label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #555; /* Professional dark grey */
-  margin-bottom: 8px;
-  display: inline-block;
-  letter-spacing: 0.5px;
+
+.calendar-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
 }
 
+.item-search.item-search-2 {
+  position: relative;
+  overflow: visible;
+}
 
+.box-search {
+  overflow: visible;
+}
 
+@media (max-width: 768px) {
+  .box-search-advance .box-search {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
 
+  .box-search-advance .box-search .item-search {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 
+  .box-search-advance .box-search .item-search:last-child {
+    margin-bottom: 0;
+  }
 
+  .box-search-advance .box-search .primaryBtn {
+    padding: 10px 20px !important;
+    font-size: 12px;
+    width: 100%;
+  }
 
+  .calendar-container {
+    width: 100%;
+  }
+}
 
+@media (max-width: 576px) {
+  .box-search-advance .box-search .item-search {
+    width: 100%;
+  }
 
+  .box-search-advance .box-search .item-search .item-search-label {
+    font-size: 12px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+  .box-search-advance .box-search .primaryBtn {
+    font-size: 12px;
+  }
+}

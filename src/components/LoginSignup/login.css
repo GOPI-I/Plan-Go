@@ -122,27 +122,27 @@
   }
 }
 
-.logo {
+.logo-text {
   font-size: 32px;
   font-weight: bold;
-  color: #333;
+  color: #000000;
   text-align: center;
   cursor: pointer;
 }
 
-.logo span {
+.logo-text span {
   font-size: 28px;
   color: #aaff00;
 }
 
 @media (max-width: 768px) {
-  .logo {
+  .logo-text {
     font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .logo {
+  .logo-text {
     font-size: 20px;
   }
 }

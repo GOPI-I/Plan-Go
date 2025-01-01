@@ -76,7 +76,7 @@ const Login = () => {
           </Canvas>
         </div>
         <div className="login-right">
-          <div className="logo mb-3" onClick={() => navigate("/")}>
+          <div className="logo-text mb-3" onClick={() => navigate("/")}>
             Plan<span>go</span>
           </div>
 

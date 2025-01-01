@@ -30,6 +30,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(clearUser());
+    localStorage.clear();
     window.location.href = "/";
   };
 

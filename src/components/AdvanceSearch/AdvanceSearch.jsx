@@ -4,8 +4,8 @@ import "../AdvanceSearch/search.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { DateRange } from "react-date-range";
 import CustDrop from "../CustDrop/CustDrop";
-import "react-date-range/dist/styles.css"; // Main CSS file
-import "react-date-range/dist/theme/default.css"; // Theme CSS file
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
 
 const AdvanceSearch = () => {
@@ -40,17 +40,32 @@ const AdvanceSearch = () => {
     const startDate = date[0].startDate;
     const endDate = date[0].endDate;
     const diffInTime = endDate.getTime() - startDate.getTime();
-    const diffInDays = diffInTime / (1000 * 3600 * 24); // Convert to days
-    
+    const diffInDays = diffInTime / (1000 * 3600 * 24);
+
+    const isLoggedIn = !!localStorage.getItem("authToken");
+
+    if (!isLoggedIn) {
+      alert("You must be logged in to continue.");
+      navigate("/login");
+      return;
+    }
+
     if (destination) {
       if (diffInDays < 3) {
         alert("Date range should be at least 3 days.");
       } else {
+        localStorage.setItem("to", destination);
+        localStorage.setItem(
+          "dates",
+          JSON.stringify([{ startDate: startDate, endDate: endDate }])
+        );
+        localStorage.setItem("guests", JSON.stringify(options));
+
         navigate("/itinerary", {
           state: {
             destination,
             date: [{ startDate: date[0].startDate, endDate: date[0].endDate }],
-            options, // Passing the options (adult and children values)
+            options,
           },
         });
       }
@@ -58,7 +73,7 @@ const AdvanceSearch = () => {
       alert("Please select a destination.");
     }
   };
-  
+
   return (
     <section className="box-search-advance">
       <Container>
@@ -112,12 +127,14 @@ const AdvanceSearch = () => {
                   )}`}
                 </span>
                 {openDate && (
-                  <DateRange
-                    editableDateInputs
-                    onChange={(item) => setDate([item.selection])}
-                    moveRangeOnFirstSelection={false}
-                    ranges={date}
-                  />
+                  <div className="calendar-container">
+                    <DateRange
+                      editableDateInputs
+                      onChange={(item) => setDate([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={date}
+                    />
+                  </div>
                 )}
               </div>
               <div className="item-search bd-none">
@@ -136,7 +153,10 @@ const AdvanceSearch = () => {
                         </span>
                         <div className="optionCounter">
                           <button
-                            disabled={option === "adult" && options[option] <= 1}
+                            disabled={
+                              (option === "adult" && options[option] <= 1) ||
+                              (option === "children" && options[option] <= 0)
+                            }
                             className="optionCounterButton"
                             onClick={() => handleOption(option, "d")}
                           >

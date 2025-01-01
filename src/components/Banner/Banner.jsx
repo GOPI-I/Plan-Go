@@ -1,40 +1,37 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import sliderImg from "../../assets/images/slider/3.png";
-import sliderImg1 from "../../assets/images/slider/2.png";
+import React, { useEffect, useRef } from "react";
+import CLOUDS from "vanta/dist/vanta.clouds.min";
+import * as THREE from "three";
 import "../Banner/banner.css";
 
 const Banner = () => {
-  return (
-    <>
-      <section className="slider">
-        <Carousel variant="dark">
-          <Carousel.Item>
-            <img src={sliderImg} className="d-block w-100" alt="First slide" />
-            <Carousel.Caption>
-              <div className="slider_des">
-                <h5 className="heading">
-                  JOURNEY TO{" "}
-                  <span style={{ color: "white" }}>EXPLORE WORLD</span>
-                </h5>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
+  const vantaRef = useRef(null);
 
-          <Carousel.Item>
-            <img src={sliderImg1} className="d-block w-100" alt="First slide" />
-            <Carousel.Caption>
-              <div className="slider_des">
-                <h5 className="heading">
-                  BEAUTIFUL PLACE{" "}
-                  <span style={{ color: "white" }}>TO VISIT</span>
-                </h5>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </section>
-    </>
+  useEffect(() => {
+    let vantaEffect;
+    if (vantaRef.current) {
+      vantaEffect = CLOUDS({
+        el: vantaRef.current,
+        THREE,
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        skyColor: 0x6bbad9,
+        cloudColor: 0x9fb4cf,
+        speed: 1.9,
+        cloudShadowColor: 0x888888,
+      });
+    }
+
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, []);
+
+  return (
+    <div ref={vantaRef} className="vanta-container">
+      <h1 className="vanta-title">Explore the World!</h1>
+    </div>
   );
 };
 

@@ -173,13 +173,13 @@
   }
 }
 
-.logo {
+.logo-text {
   font-size: 32px;
   font-weight: bold;
   text-align: center;
 }
 
-.logo span {
+.logo-text span {
   font-size: 28px;
   color: #aaff00;
 }

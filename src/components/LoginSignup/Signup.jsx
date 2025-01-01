@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./signup.css";
@@ -84,7 +84,7 @@ const SignUp = () => {
         <div className="signup-left-unique"></div>
         <div className="signup-right-unique">
           <div className="signup-form-container-unique">
-            <div className="logo mb-3" onClick={() => navigate("/")}>
+            <div className="logo-text mb-3" onClick={() => navigate("/")}>
               Plan<span>go</span>
             </div>
 
@@ -161,9 +161,7 @@ const SignUp = () => {
 
             <p className="signup-form-footer-unique">
               Already have an account?{" "}
-              <a href="/login" className="signup-link-unique">
-                Log in here
-              </a>
+              <NavLink to="/login">Log in Here</NavLink>
             </p>
           </div>
         </div>

@@ -1,0 +1,210 @@
+.itinerary-container {
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  flex-grow: 1;
+}
+
+.itinerary-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input {
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.custom-input:focus {
+  border-color: #042c99;
+  box-shadow: 0 0 5px rgba(4, 44, 153, 0.5);
+}
+
+.date-range-display {
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+}
+
+.date-range-display:hover {
+  background-color: #e9ecef;
+}
+
+.calendar-icon {
+  margin-right: 10px;
+  color: #042c99;
+}
+
+.date-picker {
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.itinerary-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #042c99;
+  border: none;
+  border-radius: 25px;
+}
+
+.itinerary-button:hover {
+  background-color: #0056b3;
+}
+
+.itinerary-container {
+  display: flex;
+  height: 100vh;
+  width: 150%;
+  background-color: #ffffff;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.itinerary-title {
+  font-size: 24px;
+  color: #042c99;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.itinerary-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.custom-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #042c99;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: #021a66;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+}
+
+.date-picker-container {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  pointer-events: none;
+}
+
+.date-picker-overlay {
+  position: absolute;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.custom-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  cursor: pointer;
+}
+
+.date-picker {
+  z-index: 1000;
+  position: relative;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+}
