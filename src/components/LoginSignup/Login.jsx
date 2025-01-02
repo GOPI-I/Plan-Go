@@ -13,6 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,6 +21,7 @@ const Login = () => {
     e.preventDefault();
     setErrorMessage("");
     setSuccessMessage("");
+    setIsLoading(true); // Start loader
 
     try {
       const response = await axios.post(
@@ -55,6 +57,8 @@ const Login = () => {
       } else {
         setErrorMessage("Something went wrong. Please try again.");
       }
+    } finally {
+      setIsLoading(false); // Stop loader
     }
   };
 
@@ -109,8 +113,21 @@ const Login = () => {
               {successMessage && (
                 <p className="login-success">{successMessage}</p>
               )}
-              <button type="submit" className="login-submit-button">
-                Login
+              <button
+                type="submit"
+                className={`login-submit-button ${
+                  isLoading ? "login-submit-button-loading" : ""
+                }`}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    Logging In
+                    <span className="login-loader"></span>
+                  </>
+                ) : (
+                  "Login"
+                )}
               </button>
             </form>
             <p className="login-form-footer">

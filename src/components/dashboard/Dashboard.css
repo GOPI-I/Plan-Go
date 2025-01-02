@@ -21,6 +21,7 @@
 
 .content {
   max-width: 1200px;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -52,12 +53,15 @@
 .itinerary-cards {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 .itinerary-card {
   position: relative;
   width: 100%;
+  align-items: center;
   max-width: 300px;
   border-radius: 8px;
   overflow: hidden;

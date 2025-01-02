@@ -13,6 +13,7 @@ const SignUp = () => {
   });
   const [photo, setPhoto] = useState(null);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // New state for loader
 
   const navigate = useNavigate();
 
@@ -30,11 +31,13 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true); // Set loading to true
 
     const { name, email, password } = formData;
 
     if (!name || !email || !password) {
       toast.error("All fields are required!");
+      setIsLoading(false); // Reset loading
       return;
     }
 
@@ -75,6 +78,8 @@ const SignUp = () => {
       } else {
         toast.error("Server is not responding");
       }
+    } finally {
+      setIsLoading(false); // Reset loading
     }
   };
 
@@ -154,8 +159,12 @@ const SignUp = () => {
                 />
               </div>
 
-              <button type="submit" className="signup-submit-button-unique">
-                Sign Up
+              <button
+                type="submit"
+                className="signup-submit-button-unique"
+                disabled={isLoading} // Disable button while loading
+              >
+                {isLoading ? "Signing Up..." : "Sign Up"} {/* Show loader */}
               </button>
             </form>
 

@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import { ArrowBack } from "@mui/icons-material";
+import Card from "../../assets/images/about/card.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ShareModal from "./ShareModal"; // Import the ShareModal component
+import ShareModal from "./ShareModal";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -148,16 +149,7 @@ const Dashboard = () => {
         <div className="itinerary-cards">
           {filteredItineraries.map((itinerary) => (
             <div className="itinerary-card" key={itinerary._id}>
-              <div
-                className="card-image"
-                style={{
-                  backgroundImage: `url(${
-                    randomImages[
-                      Math.floor(Math.random() * randomImages.length)
-                    ]
-                  })`,
-                }}
-              ></div>
+              <img className="card-image" src={Card}></img>
               <div className="card-content">
                 <div className="itinerary-title">
                   {itinerary.startPlace} to {itinerary.endPlace}
