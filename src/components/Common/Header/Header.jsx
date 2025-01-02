@@ -81,7 +81,7 @@ const Header = () => {
                   Contact Us
                 </NavLink>
                 {name && (
-                  <NavLink className="nav-link" to="/dashboard">
+                  <NavLink className="nav-link" to="/myitineraries">
                     My Itineraries
                   </NavLink>
                 )}
