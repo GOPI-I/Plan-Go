@@ -543,7 +543,7 @@ const FlightTime = () => {
               <h3>{draggedFlight.airline} ({draggedFlight.flightNumber})</h3>
               <p><strong>From:</strong> {draggedFlight.from}</p>
               <p><strong>To:</strong> {draggedFlight.to}</p>
-              <p><strong>Departure:</strong> {draggedFlight.departure}</p>
+              <p><strong >Departure:</strong> {draggedFlight.departure}</p>
               <p><strong>Arrival:</strong> {draggedFlight.arrival}</p>
               <p><strong>Duration:</strong> {draggedFlight.duration}</p>
               <p><strong>Cost:</strong> ₹{draggedFlight.cost}</p>
@@ -561,23 +561,79 @@ const FlightTime = () => {
         {filteredFlights.length > 0 ? (
           filteredFlights.map((flight) => (
             <div
-              key={flight.id}
-              id={`flight-card-${flight.id}`}
-              className="flight-card"
-              draggable
-              onDragStart={(e) => handleDragStart(e, flight)}
-              onClick={() => toggleSelection(flight.id)}
-            >
-              <h3>{flight.airline} ({flight.flightNumber})</h3>
-              <p><strong>From:</strong> {flight.from}</p>
-              <p><strong>To:</strong> {flight.to}</p>
-              <p><strong>Departure:</strong> {flight.departure}</p>
-              <p><strong>Arrival:</strong> {flight.arrival}</p>
-              <p><strong>Duration:</strong> {flight.duration}</p>
-              <p><strong>Cost:</strong> ₹{flight.cost}</p>
-              <p><strong>Stops:</strong> {flight.stops}</p>
-              <a href={flight.website} target="_blank" rel="noopener noreferrer">Book Now</a>
-            </div>
+      key={flight.id}
+      id={`flight-card-${flight.id}`}
+      className="flight-card-bordered"
+      draggable
+      onDragStart={(e) => handleDragStart(e, flight)}
+      onClick={() => toggleSelection(flight.id)}
+    >
+      <header>
+        <div className="logo">
+          {/* You can place a logo here */}
+        </div>
+        <div className="flight">
+          <small>{flight.airline}</small>
+          <strong>{flight.flightNumber}</strong>
+        </div>
+      </header>
+
+      {/* Cities */}
+      <div className="cities">
+        <div className="city">
+          <strong>{flight.from}</strong>
+          <small>From</small>
+        </div>
+        <div className="city">
+          <strong>{flight.to}</strong>
+          <small>To</small>
+        </div>
+        <div className="airplane">
+          {/* You can add an airplane icon or animation here */}
+        </div>
+      </div>
+
+      {/* Infos */}
+      <div className="infos">
+        <div className="places">
+          <div className="box">
+            <small>Departure</small>
+            <strong>{flight.departure}</strong>
+          </div>
+          <div className="box">
+            <small>Arrival</small>
+            <strong>{flight.arrival}</strong>
+          </div>
+        </div>
+        <div className="times">
+          <div className="box">
+            <small>Duration</small>
+            <strong>{flight.duration}</strong>
+          </div>
+          <div className="box">
+            <small>Cost</small>
+            <strong>₹{flight.cost}</strong>
+          </div>
+        </div>
+      </div>
+
+      {/* Strap Section */}
+      <div className="strap">
+        <div className="box">
+          <div>
+            <small>Stops</small>
+            <strong>{flight.stops}</strong>
+          </div>
+          <div>
+            <small>Book Now</small>
+            <a href={flight.website} target="_blank" rel="noopener noreferrer">
+              <strong>Book Now</strong>
+            </a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
           ))
         ) : (
           <p>No matching flights found.</p>

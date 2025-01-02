@@ -1,4 +1,4 @@
-.header {
+.list-header {
     background-color: #1b1b2f; /* Deep blue-gray background for elegance */
     color: #f8f9fa; /* Light text for contrast */
     display: flex;
@@ -8,30 +8,53 @@
     z-index: 1000; /* Ensure it stays above other elements */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
     transition: background-color 0.3s ease-in-out;
+    height: 90px;
+}
+.list-header-back-button {
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #aaff00d0; /* Green background */
+    color: rgb(255, 254, 254); /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
-.header:hover {
+.list-header-back-button:hover {
+    background-color: #09530d; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.list-header-back-button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: scale(0.95); /* Slight shrink effect */
+}
+
+.list-header:hover {
     background-color: #162447; /* Slightly darker on hover */
 }
 
-.headerContainer {
+.list-header-container {
     width: 100%;
     max-width: 1200px; /* Adjust for a wider layout */
     margin: 20px 0px 100px 0px;
 }
 
-.headerContainer.listMode {
+.list-header-container.listMode {
     margin: 10px 20px 20px 20px;
 }
 
-.headerList {
+.list-header-list {
     display: flex;
     gap: 40px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.headerListItem {
+.list-header-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -40,7 +63,7 @@
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.headerListItem.active {
+.list-header-item.active {
     border: 1px solid #4caf50; /* Green for active item */
     padding: 10px;
     border-radius: 20px;
@@ -48,12 +71,12 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.headerListItem:hover {
+.list-header-item:hover {
     color: #ff4b5c; /* Vibrant red on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
-.headerBtn {
+.list-header-btn {
     background-color: #4caf50; /* Vibrant green for buttons */
     color: white;
     font-weight: 600;
@@ -64,12 +87,12 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.headerBtn:hover {
+.list-header-btn:hover {
     background-color: #388e3c; /* Darker green on hover */
     transform: translateY(-2px); /* Subtle lift effect */
 }
 
-.headerSearch {
+.list-header-search {
     height: 40px;
     background-color: #ffffff;
     border: 3px solid #f1c40f; /* Golden color for search bar border */
@@ -85,18 +108,18 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-.headerSearchItem {
+.list-header-search-item {
     display: flex;
     align-items: center;
     gap: 10px;
     transition: color 0.3s ease;
 }
 
-.headerSearchItem:hover {
+.list-header-search-item:hover {
     color: #0f3460; /* Blue-gray on hover */
 }
 
-.headerSearchInput {
+.list-header-search-input {
     border: none;
     outline: none;
     padding: 5px;
@@ -105,26 +128,26 @@
     border-radius: 5px;
 }
 
-.headerSearchText {
+.list-header-search-text {
     color: #555; /* Slightly darker gray */
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.headerSearchText:hover {
+.list-header-search-text:hover {
     color: #d35400; /* Vibrant orange on hover */
 }
 
-.headerIcon {
+.list-header-icon {
     color: #9a9a9a; /* Subtle icon color */
     transition: color 0.3s ease;
 }
 
-.headerIcon:hover {
+.list-header-icon:hover {
     color: #2980b9; /* Bright blue on hover */
 }
 
-.unique-header-profile {
+.list-header-profile {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -132,11 +155,11 @@
     transition: transform 0.3s ease;
 }
 
-.unique-header-profile:hover {
+.list-header-profile:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
 
-.unique-header-profile-image {
+.list-header-profile-image {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -144,23 +167,23 @@
     transition: border-color 0.3s ease;
 }
 
-.unique-header-profile-image:hover {
+.list-header-profile-image:hover {
     border-color: #e74c3c; /* Red border on hover */
 }
 
-.unique-header-profile-text h4 {
+.list-header-profile-text h4 {
     margin: 0;
     font-size: 1rem;
     color: #f8f9fa;
 }
 
-.unique-header-profile-text p {
+.list-header-profile-text p {
     margin: 0;
     font-size: 0.85rem;
     color: #aaa;
 }
 
-.unique-header-dropdown {
+.list-header-dropdown {
     position: absolute;
     top: 60px;
     right: 0;
@@ -172,29 +195,29 @@
     animation: dropdownFade 0.3s ease;
 }
 
-.unique-header-dropdown ul {
+.list-header-dropdown ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.unique-header-dropdown li {
+.list-header-dropdown li {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.unique-header-dropdown li:hover {
+.list-header-dropdown li:hover {
     background-color: #4caf50; /* Highlight dropdown items on hover */
 }
 
-.list-link {
+.list-header-link {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit text color */
     transition: color 0.3s ease;
 }
 
-.list-link:hover {
+.list-header-link:hover {
     color: #ff4b5c; /* Vibrant red on hover */
 }
 
@@ -209,6 +232,8 @@
         transform: translateY(0);
     }
 }
-NavLink{
+
+.NavLink {
     text-decoration: none;
 }
+

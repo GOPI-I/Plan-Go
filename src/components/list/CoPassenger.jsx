@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./copassenger.css"
 import { useNavigate } from 'react-router-dom';
+import ListHeader from './ListHeader';
 const CoPassenger = () => {
   const navigate  = useNavigate();
   const [passengers, setPassengers] = useState([]);
@@ -41,6 +42,8 @@ const CoPassenger = () => {
   };
 
   return (
+    <>
+    <ListHeader/>
     <div className="coPassengerContainerUnique">
       <h1 className="coPassengerTitleUnique">Co-Passenger Information</h1>
       <div className="inputFieldsUnique">
@@ -86,6 +89,7 @@ const CoPassenger = () => {
 
       <button className="nextPageButtonUnique" onClick={handleNextPage}>Next Page</button>
     </div>
+    </>
   );
 };
 

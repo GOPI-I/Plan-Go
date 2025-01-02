@@ -31,6 +31,34 @@ const locations = [
   { label: "Amritsar, Punjab", value: "Amritsar" },
   { label: "Shillong, Meghalaya", value: "Shillong" },
 ];
+const destinations = [
+  { label: "USA, Turkish", value: "USA" },
+  { label: "Tokyo, Japan", value: "Tokyo" },
+  { label: "Sydney, Australia", value: "Sydney" },
+  { label: "Melbourne, Australia", value: "Melbourne" },
+  { label: "Paris, France", value: "Paris" },
+  { label: "Rome, Italy", value: "Rome" },
+  { label: "Bangkok, Thailand", value: "Bangkok" },
+  { label: "Dubai, UAE", value: "Dubai" },
+  { label: "London, UK", value: "London" },
+  { label: "Cape Town, South Africa", value: "Cape Town" },
+  { label: "Rio de Janeiro, Brazil", value: "Rio de Janeiro" },
+  { label: "New Delhi, India", value: "New Delhi" },
+  { label: "Athens, Greece", value: "Athens" },
+  { label: "Beijing, China", value: "Beijing" },
+  { label: "Kyoto, Japan", value: "Kyoto" },
+  { label: "San Francisco, USA", value: "San Francisco" },
+  { label: "Singapore", value: "Singapore" },
+  { label: "Istanbul, Turkey", value: "Istanbul" },
+  { label: "Cairo, Egypt", value: "Cairo" },
+  { label: "Santorini, Greece", value: "Santorini" },
+  { label: "Maldives, Indian Ocean", value: "Maldives" },
+  { label: "Bora Bora, French Polynesia", value: "Bora Bora" },
+  { label: "Machu Picchu, Peru", value: "Machu Picchu" },
+  { label: "Grand Canyon, USA", value: "Grand Canyon" },
+  { label: "Great Barrier Reef, Australia", value: "Great Barrier Reef" },
+  { label: "Swiss Alps, Switzerland", value: "Swiss Alps" },
+];
 
 const Itinerary = () => {
   const [dateRange, setDateRange] = useState([
@@ -130,7 +158,7 @@ const Itinerary = () => {
               <label htmlFor="destination">Destination</label>
               <Select
                 id="destination"
-                options={locations}
+                options={destinations}
                 value={destinationLocation}
                 onChange={setDestinationLocation}
                 placeholder="Enter destination"

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./itinearyview.css"
+import SideBar from "../itinerary/SideBar";
+import ListHeader from "./ListHeader";
 const ItineraryView = () => {
   const [flightItinerary, setFlightItinerary] = useState([]);
   const [hotelDetails, setHotelDetails] = useState(null);
@@ -8,7 +10,12 @@ const ItineraryView = () => {
   const [draggedFlight, setDraggedFlight] = useState(null);
 
   useEffect(() => {
-    // Load flight itinerary
+
+    const storedVisitDetails = localStorage.getItem("visitHistory");
+    if (storedVisitDetails){
+      setVisitHistory(JSON.parse(storedVisitDetails));
+    }
+   
 
 
     // Load hotel details
@@ -19,7 +26,7 @@ const ItineraryView = () => {
 
     // Load visit history
    
-    const storedCopassengerDetails = localStorage.getItem("passengerData");
+    const storedCopassengerDetails = localStorage.getItem("copassenger");
     if (storedCopassengerDetails) {
       setCopassengerDetails(JSON.parse(storedCopassengerDetails));
     }
@@ -32,7 +39,13 @@ const ItineraryView = () => {
   }, []);
 
   return (
-    <div className="itineraryViewContainerUnique">
+    <>
+    <ListHeader/>
+    
+    <div className="itinerary-container">
+      <SideBar/>
+      <div className="content">
+      <div className="itineraryViewContainerUnique">
       <h1 className="itineraryTitleUnique">Your Complete Itinerary</h1>
      {/* Dragged Flight */}
 <div className="itinerarySectionUnique">
@@ -55,6 +68,7 @@ const ItineraryView = () => {
         </a>
       </p>
     </div>
+    
   ) : (
     <p>No dragged flight details available.</p>
   )}
@@ -106,6 +120,11 @@ const ItineraryView = () => {
         )}
       </div>
     </div>
+
+
+      </div>
+      </div>
+   </>
   );
 };
 
