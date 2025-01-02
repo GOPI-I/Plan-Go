@@ -5,6 +5,7 @@ import Karan from "../../assets/images/about/karan.png";
 import Gopi from "../../assets/images/about/gopi.png";
 import Vignesh from "../../assets/images/about/vignesh.png";
 import Aqhib from "../../assets/images/about/aaqhib.png";
+import Sathish from "../../assets/images/about/Sathish.png";
 import { BreadCrumbs } from "../Back-conact-about/BreadCrumbs";
 
 const About = () => {
@@ -25,6 +26,7 @@ const About = () => {
       setTeamFact("Keep clicking, you're getting closer...");
     }
   };
+
   const handleMissionClick = () => {
     const missionMessages = [
       "Mission Accomplished! Now you're ready to plan your best trip ever.",
@@ -112,6 +114,9 @@ const About = () => {
                       <p className="about-text-lg font-bold">Gopi</p>
                       <p className="about-text-gray-600">Co-Founder & CTO</p>
                     </Col>
+                  </Row>
+
+                  <Row className="g-3">
                     <Col md={6}>
                       <img
                         className={`about-profile ${dancing ? "dance" : ""}`}
@@ -129,6 +134,17 @@ const About = () => {
                       />
                       <p className="about-text-lg font-bold">Mohammad Aqhib</p>
                       <p className="about-text-gray-600">CIO</p>
+                    </Col>
+                  </Row>
+                  <Row className="g-3 justify-content-center">
+                    <Col md={4}>
+                      <img
+                        className={`about-profile ${dancing ? "dance" : ""}`}
+                        src={Sathish}
+                        alt="Sathish"
+                      />
+                      <p className="about-text-lg font-bold">Sathish</p>
+                      <p className="about-text-gray-600">Network Engineer</p>
                     </Col>
                   </Row>
                   {teamFact && <p className="fun-fact">{teamFact}</p>}
