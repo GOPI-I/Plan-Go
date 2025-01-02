@@ -22,6 +22,7 @@ import PlaceVisit from "./components/list/PlaceVisit";
 import CoPassenger from "./components/list/CoPassenger";
 import ItinearyView from "./components/list/ItinearyView";
 import ItineraryCreation from "./components/itinerary/ItineraryCreation";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   return (
@@ -46,9 +47,9 @@ function App() {
         <Route path="/copassenger" element={<CoPassenger />} />
         <Route path="/itinearyview" element={<ItinearyView />} />
         <Route path="/budgetTracker" element={<BudgetTracker />} />
-        <Route path="/itinearydashboard" element={<ItinearyDashboard />} />
+        {/* <Route path="/itinearydashboard" element={<ItinearyDashboard />} /> */}
+        <Route path="myitineraries" element={<Dashboard />} />
         <Route path="/itinerary" element={<ItineraryCreation />} />
-        
       </Routes>
       {/* <Footer/> */}
     </>

@@ -80,6 +80,11 @@ const Header = () => {
                 <NavLink className="nav-link" to="/contact">
                   Contact Us
                 </NavLink>
+                {name && (
+                  <NavLink className="nav-link" to="/dashboard">
+                    My Itineraries
+                  </NavLink>
+                )}
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
@@ -100,16 +105,10 @@ const Header = () => {
               </>
             ) : (
               <>
-                <NavLink
-                  to="/login"
-                  className="primaryBtn d-none d-sm-inline-block"
-                >
+                <NavLink to="/login" className="primaryBtn">
                   Login
                 </NavLink>
-                <NavLink
-                  to="/register"
-                  className="primaryBtn d-none d-sm-inline-block"
-                >
+                <NavLink to="/register" className="primaryBtn">
                   Register
                 </NavLink>
               </>

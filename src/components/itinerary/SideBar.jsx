@@ -52,7 +52,7 @@ const SideBar = () => {
         </div>
 
         <Nav className="flex-column">
-          <NavLink to="/itinearydashboard" className="nav-item">
+          <NavLink to="/" className="nav-item">
             Dashboard
           </NavLink>
           <NavLink to="/airporttaxi" className="nav-item">
